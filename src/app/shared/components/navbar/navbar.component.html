@@ -1,0 +1,70 @@
+<!-- <nav class="bg-white shadow-md border-b fixed w-full z-50"> -->
+<nav class="bg-white shadow-md border-b w-full z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <a href="/" class="text-lg font-bold text-blue-600">Company Name</a>
+
+      <!-- Hamburger -->
+      <button (click)="toggleMenu()" class="md:hidden text-gray-700">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor">
+          <path *ngIf="!menuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+          <path *ngIf="menuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-6">
+        <ng-container *ngFor="let item of menuItems">
+          <div *ngIf="item.children" class="relative group">
+            <button class="font-medium hover:text-blue-600">{{ item.label }}</button>
+            <div class="absolute left-0 top-full mt-2 w-64 bg-white shadow-md border rounded opacity-0 group-hover:opacity-100 transition-opacity z-20 p-2">
+              <ng-container *ngFor="let child of item.children">
+                <div *ngIf="!child.children">
+                  <a [routerLink]="child.link" class="block px-3 py-1 rounded hover:bg-gray-100">{{ child.label }}</a>
+                </div>
+                <div *ngIf="child.children">
+                  <div class="font-semibold px-3 mt-2">{{ child.label }}</div>
+                  <a *ngFor="let sub of child.children" [routerLink]="sub.link"
+                    class="block px-6 py-1 text-sm hover:bg-gray-100">{{ sub.label }}</a>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div *ngIf="!item.children">
+            <a *ngIf="item.external" [href]="item.link" target="_blank" class="font-medium text-green-600 hover:underline">
+              {{ item.label }}
+            </a>
+            <a *ngIf="!item.external" [routerLink]="item.link" class="font-medium hover:text-blue-600">
+              {{ item.label }}
+            </a>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div *ngIf="menuOpen" class="md:hidden bg-white px-4 py-3 space-y-2 border-t">
+    <ng-container *ngFor="let item of menuItems">
+      <div *ngIf="!item.children">
+        <a *ngIf="item.external" [href]="item.link" target="_blank" class="block text-green-600 hover:underline">{{ item.label }}</a>
+        <a *ngIf="!item.external" [routerLink]="item.link" class="block text-gray-700 hover:text-blue-600">{{ item.label }}</a>
+      </div>
+      <div *ngIf="item.children">
+        <div class="font-semibold text-gray-800">{{ item.label }}</div>
+        <ng-container *ngFor="let child of item.children">
+          <a *ngIf="!child.children" [routerLink]="child.link" class="block ml-4 text-gray-600 hover:text-blue-600">
+            {{ child.label }}
+          </a>
+          <div *ngIf="child.children">
+            <div class="ml-4 font-medium text-gray-700">{{ child.label }}</div>
+            <a *ngFor="let sub of child.children" [routerLink]="sub.link"
+              class="block ml-8 text-sm text-gray-600 hover:text-blue-600">{{ sub.label }}</a>
+          </div>
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+</nav>
