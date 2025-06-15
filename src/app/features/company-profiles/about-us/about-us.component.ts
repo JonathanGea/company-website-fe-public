@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
+import { TitlePageComponent } from '../../../shared/title-page/title-page.component';
 
 @Component({
   selector: 'app-about-us',
   standalone: true,
-  imports: [],
+  imports: [TitlePageComponent],
   templateUrl: './about-us.component.html',
   styleUrl: './about-us.component.css'
 })
 export class AboutUsComponent {
+  title: string = 'Tentang Kami';
   aboutImage = '';
   aboutText = '';
 

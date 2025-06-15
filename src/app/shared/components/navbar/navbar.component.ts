@@ -29,16 +29,16 @@ export class NavbarComponent {
     {
       label: 'Perusahaan',
       children: [
-        { label: 'Tentang Kami', link: '/perusahaan/tentang-kami' },
-        { label: 'Visi dan Misi', link: '/perusahaan/visi-misi' },
-        { label: 'Struktur Organisasi', link: '/perusahaan/struktur-organisasi' },
-        { label: 'Mitra Pendiri', link: '/perusahaan/mitra-pendiri' },
+        { label: 'Tentang Kami', link: '/company/about-us' },
+        { label: 'Visi dan Misi', link: '/company/vision-missions' },
+        { label: 'Struktur Organisasi', link: '/company/organizational-structure' },
+        { label: 'Mitra Pendiri', link: '/company/founding-partner' },
         {
           label: 'Personalia DPSM',
           children: [
-            { label: 'Pengurus', link: '/perusahaan/personal/pengurus' },
-            { label: 'Pengawas', link: '/perusahaan/personal/pengawas' },
-            { label: 'Pegawai', link: '/perusahaan/personal/pegawai' },
+            { label: 'Pengurus', link: '/company/personal/pengurus' },
+            { label: 'Pengawas', link: '/company/personal/pengawas' },
+            { label: 'Pegawai', link: '/company/personal/pegawai' },
           ],
         },
       ],
@@ -47,7 +47,7 @@ export class NavbarComponent {
     {
       label: 'Informasi',
       children: [
-        { label: 'Berita', link: '/informasi/berita' },
+        { label: 'Berita', link: '/information/news' },
         { label: 'Laporan-laporan (PDF)', link: '/informasi/laporan' },
         { label: 'Formulir PDF', link: '/informasi/formulir' },
       ],

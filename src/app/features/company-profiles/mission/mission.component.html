@@ -1,19 +1,28 @@
-<div class="space-y-8">
-  <h2 class="text-2xl font-bold text-center">Misi</h2>
+<div class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+  <div class="text-center mb-16">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Misi Kami</h2>
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Kami berkomitmen untuk memberikan yang terbaik melalui:</p>
+  </div>
   
-  <div *ngFor="let mission of missions; let i = index"
-       class="flex flex-col md:flex-row items-center gap-6"
-       [ngClass]="{ 'md:flex-row-reverse': i % 2 === 1 }">
-       
-    <div class="w-full md:w-1/2 h-64 overflow-hidden rounded-md shadow">
-      <img [src]="mission.image"
-           alt="{{ mission.title }}"
-           class="w-full h-full object-cover" />
-    </div>
-    
-    <div class="w-full md:w-1/2">
-      <h3 class="text-2xl font-semibold mb-2">{{ mission.title }}</h3>
-      <p class="text-gray-600">{{ mission.description }}</p>
+  <div class="space-y-16">
+    <div *ngFor="let mission of missions; let i = index"
+         class="flex flex-col md:flex-row items-center gap-10 group"
+         [ngClass]="{ 'md:flex-row-reverse': i % 2 === 1 }">
+         
+      <div class="w-full md:w-1/2 h-80 overflow-hidden rounded-xl shadow-lg relative">
+        <img [src]="mission.image"
+             alt="{{ mission.title }}"
+             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+      </div>
+      
+      <div class="w-full md:w-1/2">
+        <div class="flex items-center mb-4">
+          <div class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4">{{ i + 1 }}</div>
+          <h3 class="text-2xl font-bold text-gray-800">{{ mission.title }}</h3>
+        </div>
+        <p class="text-gray-600 leading-relaxed">{{ mission.description }}</p>
+      </div>
     </div>
   </div>
 </div>

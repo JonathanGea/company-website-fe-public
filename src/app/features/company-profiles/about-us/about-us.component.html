@@ -1,8 +1,21 @@
-<div class="space-y-6">
-  <h2 class="text-2xl font-bold">Tentang Kami</h2>
-  
-  <div class="flex flex-col md:flex-row gap-6 items-center">
-    <img [src]="aboutImage" alt="About Us" class="w-full md:w-1/2 rounded-lg shadow" />
-    <p class="text-justify text-gray-700">{{ aboutText }}</p>
+<app-title-page [title]="title"></app-title-page>
+
+
+<div class="py-4 sm:px-2 lg:px-1 mx-auto">
+  <div class="flex flex-col md:flex-row gap-10 items-center bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+    <img [src]="aboutImage" alt="About Us" class="w-full md:w-1/2 rounded-lg shadow-md transform hover:scale-[1.02] transition-transform duration-500" />
+    <div class="w-full md:w-1/2">
+      <p class="text-gray-700 text-lg leading-relaxed">{{ aboutText }}</p>
+      <div class="mt-6 grid grid-cols-2 gap-4">
+        <div class="bg-blue-50 p-4 rounded-lg">
+          <h3 class="font-bold text-blue-600">10+ Tahun</h3>
+          <p class="text-sm text-gray-600">Pengalaman</p>
+        </div>
+        <div class="bg-blue-50 p-4 rounded-lg">
+          <h3 class="font-bold text-blue-600">100+</h3>
+          <p class="text-sm text-gray-600">Klien</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
