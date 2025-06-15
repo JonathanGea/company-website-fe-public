@@ -35,6 +35,11 @@ export const routes: Routes = [
         path: 'information/news/:id',
         loadComponent: () =>
             import('./features/news-detail/news-detail.component').then(m => m.NewsDetailComponent)
+    },
+    {
+        path: 'gallery/foto',
+        loadComponent: () =>
+            import('./features/gallery-page/gallery-page.component').then(m => m.GalleryPageComponent)
     }
 
 

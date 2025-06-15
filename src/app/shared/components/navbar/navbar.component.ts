@@ -56,8 +56,8 @@ export class NavbarComponent {
     {
       label: 'Galeri',
       children: [
-        { label: 'Foto', link: '/galeri/foto' },
-        { label: 'Video (YouTube)', link: '/galeri/video' },
+        { label: 'Foto', link: '/gallery/foto' },
+        { label: 'Video (YouTube)', link: '/gallery/video' },
       ],
     },
 

@@ -1,0 +1,24 @@
+<app-title-page [title]="'Galeri Kegiatan'"></app-title-page>
+
+<div class="max-w-7xl mx-auto px-4 py-10">
+
+  <div class="columns-1 sm:columns-2 md:columns-3 lg:columns-3 gap-4 space-y-4">
+    <div
+      *ngFor="let image of images"
+      class="relative group overflow-hidden rounded-xl break-inside-avoid shadow-lg hover:shadow-2xl transition"
+    >
+      <img
+        [src]="image.url"
+        [alt]="image.title"
+        class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+        loading="lazy"
+      />
+      <!-- Overlay -->
+      <div
+        class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+      >
+        <p class="text-white text-lg font-semibold">{{ image.title }}</p>
+      </div>
+    </div>
+  </div>
+</div>
